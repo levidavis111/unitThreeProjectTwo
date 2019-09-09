@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC3B31E42326E73F00FA66F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31E32326E73F00FA66F0 /* AppDelegate.swift */; };
-		FC3B31E62326E73F00FA66F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31E52326E73F00FA66F0 /* ViewController.swift */; };
 		FC3B31E92326E73F00FA66F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3B31E72326E73F00FA66F0 /* Main.storyboard */; };
 		FC3B31EB2326E74100FA66F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3B31EA2326E74100FA66F0 /* Assets.xcassets */; };
 		FC3B31EE2326E74100FA66F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3B31EC2326E74100FA66F0 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		FC3B32062326E7C900FA66F0 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B32052326E7C900FA66F0 /* AppError.swift */; };
 		FC3B32082326E7D400FA66F0 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B32072326E7D400FA66F0 /* Show.swift */; };
 		FC3B320A2326E80800FA66F0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B32092326E80800FA66F0 /* ImageManager.swift */; };
+		FC3B320C2326EA4C00FA66F0 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B320B2326EA4C00FA66F0 /* ShowViewController.swift */; };
+		FC3B32112326EB3300FA66F0 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B32102326EB3300FA66F0 /* ShowTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,6 @@
 /* Begin PBXFileReference section */
 		FC3B31E02326E73F00FA66F0 /* unit-three-project-two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-three-project-two.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3B31E32326E73F00FA66F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC3B31E52326E73F00FA66F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC3B31E82326E73F00FA66F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC3B31EA2326E74100FA66F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC3B31ED2326E74100FA66F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +44,8 @@
 		FC3B32052326E7C900FA66F0 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		FC3B32072326E7D400FA66F0 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		FC3B32092326E80800FA66F0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		FC3B320B2326EA4C00FA66F0 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		FC3B32102326EB3300FA66F0 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,15 +87,10 @@
 		FC3B31E22326E73F00FA66F0 /* unit-three-project-two */ = {
 			isa = PBXGroup;
 			children = (
-				FC3B31E32326E73F00FA66F0 /* AppDelegate.swift */,
-				FC3B31E52326E73F00FA66F0 /* ViewController.swift */,
-				FC3B32032326E7BE00FA66F0 /* NetworkManager.swift */,
-				FC3B32052326E7C900FA66F0 /* AppError.swift */,
-				FC3B32092326E80800FA66F0 /* ImageManager.swift */,
-				FC3B32072326E7D400FA66F0 /* Show.swift */,
+				FC3B320E2326EA8D00FA66F0 /* Models */,
+				FC3B320D2326EA6800FA66F0 /* Supporting Files */,
+				FC3B320F2326EA9D00FA66F0 /* View Controllers */,
 				FC3B31E72326E73F00FA66F0 /* Main.storyboard */,
-				FC3B31EA2326E74100FA66F0 /* Assets.xcassets */,
-				FC3B31EC2326E74100FA66F0 /* LaunchScreen.storyboard */,
 				FC3B31EF2326E74100FA66F0 /* Info.plist */,
 			);
 			path = "unit-three-project-two";
@@ -106,6 +103,36 @@
 				FC3B31FA2326E74200FA66F0 /* Info.plist */,
 			);
 			path = "unit-three-project-twoTests";
+			sourceTree = "<group>";
+		};
+		FC3B320D2326EA6800FA66F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B31E32326E73F00FA66F0 /* AppDelegate.swift */,
+				FC3B31EA2326E74100FA66F0 /* Assets.xcassets */,
+				FC3B31EC2326E74100FA66F0 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC3B320E2326EA8D00FA66F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B32032326E7BE00FA66F0 /* NetworkManager.swift */,
+				FC3B32052326E7C900FA66F0 /* AppError.swift */,
+				FC3B32092326E80800FA66F0 /* ImageManager.swift */,
+				FC3B32072326E7D400FA66F0 /* Show.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC3B320F2326EA9D00FA66F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B320B2326EA4C00FA66F0 /* ShowViewController.swift */,
+				FC3B32102326EB3300FA66F0 /* ShowTableViewCell.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +238,11 @@
 			files = (
 				FC3B32062326E7C900FA66F0 /* AppError.swift in Sources */,
 				FC3B32042326E7BE00FA66F0 /* NetworkManager.swift in Sources */,
-				FC3B31E62326E73F00FA66F0 /* ViewController.swift in Sources */,
+				FC3B32112326EB3300FA66F0 /* ShowTableViewCell.swift in Sources */,
 				FC3B320A2326E80800FA66F0 /* ImageManager.swift in Sources */,
 				FC3B32082326E7D400FA66F0 /* Show.swift in Sources */,
 				FC3B31E42326E73F00FA66F0 /* AppDelegate.swift in Sources */,
+				FC3B320C2326EA4C00FA66F0 /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

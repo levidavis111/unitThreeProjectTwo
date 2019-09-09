@@ -9,24 +9,59 @@
 import UIKit
 
 class ShowViewController: UIViewController {
+    
+    var shows = [Show]() {
+        didSet {
+            showTableView.reloadData()
+        }
+    }
 
     @IBOutlet weak var showSearchBar: UISearchBar!
     @IBOutlet weak var showTableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        showTableView.delegate = self
+        showTableView.dataSource = self
+        loadData()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadData() {
+        Show.getShowData { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let shows):
+                    self.shows = shows
+                }
+            }
+        }
     }
-    */
+    
+}
 
+extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = showTableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? ShowTableViewCell {
+            let oneShow = shows[indexPath.row]
+            cell.showNameLabel.text = oneShow.show.name
+            return cell
+        }
+        
+        
+        
+        return UITableViewCell()
+    }
+    
+    
 }

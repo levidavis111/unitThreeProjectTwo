@@ -252,6 +252,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ulU-d9-fzw">
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="qPh-AE-Hf9"/>
+                                    <constraint firstAttribute="height" constant="20" id="wjY-CE-5Ss"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -263,12 +270,15 @@
                             <constraint firstItem="uPF-WA-bmG" firstAttribute="centerX" secondItem="rdl-zT-T77" secondAttribute="centerX" id="Etx-xC-rpA"/>
                             <constraint firstItem="lxj-kw-8LW" firstAttribute="centerY" secondItem="rdl-zT-T77" secondAttribute="centerY" multiplier="0.4" id="JK7-Ka-ASG"/>
                             <constraint firstItem="kW1-kQ-WgL" firstAttribute="centerY" secondItem="rdl-zT-T77" secondAttribute="centerY" multiplier="0.9" id="Yno-R6-HEc"/>
+                            <constraint firstItem="ulU-d9-fzw" firstAttribute="centerX" secondItem="rdl-zT-T77" secondAttribute="centerX" id="hvC-0e-JcO"/>
                             <constraint firstItem="kW1-kQ-WgL" firstAttribute="leading" secondItem="rdl-zT-T77" secondAttribute="leading" constant="20" id="jgp-4u-f8V"/>
+                            <constraint firstItem="ulU-d9-fzw" firstAttribute="centerY" secondItem="rdl-zT-T77" secondAttribute="centerY" id="wNh-fK-xB0"/>
                             <constraint firstItem="uPF-WA-bmG" firstAttribute="centerY" secondItem="rdl-zT-T77" secondAttribute="centerY" multiplier="1.4" id="x17-nb-qhn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rdl-zT-T77"/>
                     </view>
                     <connections>
+                        <outlet property="activitySpinnerOutlet" destination="ulU-d9-fzw" id="bKu-KW-kKz"/>
                         <outlet property="episodeDetailImageView" destination="lxj-kw-8LW" id="xj8-Qk-O8R"/>
                         <outlet property="episodeDetailNameLabel" destination="uSy-0A-Rfh" id="s4K-2g-YF7"/>
                         <outlet property="episodeDetailSeasonAndNumberLabel" destination="kW1-kQ-WgL" id="LRx-bu-CPJ"/>

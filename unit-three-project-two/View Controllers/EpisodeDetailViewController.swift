@@ -17,9 +17,11 @@ class EpisodeDetailViewController: UIViewController {
     @IBOutlet weak var episodeDetailNameLabel: UILabel!
     @IBOutlet weak var episodeDetailSeasonAndNumberLabel: UILabel!
     @IBOutlet weak var episodeDetailSummaryTextView: UITextView!
+    @IBOutlet weak var activitySpinnerOutlet: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activitySpinnerOutlet.startAnimating()
         setupViews()
         // Do any additional setup after loading the view.
     }
@@ -40,6 +42,7 @@ class EpisodeDetailViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let image):
+                    self.activitySpinnerOutlet.stopAnimating()
                     self.episodeDetailImageView.image = image
                 }
             }

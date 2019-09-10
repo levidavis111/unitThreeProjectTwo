@@ -14,6 +14,7 @@ struct Show: Codable {
     
     
     struct ShowWrapper: Codable {
+        let id: Int
         let name: String
         let image: ImageWrapper?
     }

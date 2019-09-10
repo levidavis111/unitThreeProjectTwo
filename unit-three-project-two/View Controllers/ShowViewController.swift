@@ -38,6 +38,14 @@ class ShowViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ShowEpisodeViewController {
+            guard let indexPath = showTableView.indexPathForSelectedRow,
+            let episodeVC = segue.destination as? ShowEpisodeViewController else {return}
+            let oneShow = shows[indexPath.row]
+            episodeVC.oneShow = oneShow
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +53,6 @@ class ShowViewController: UIViewController {
         showTableView.dataSource = self
         showSearchBar.delegate = self
         
-
-        // Do any additional setup after loading the view.
     }
     
 }

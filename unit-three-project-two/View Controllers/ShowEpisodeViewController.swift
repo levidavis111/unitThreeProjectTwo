@@ -9,22 +9,39 @@
 import UIKit
 
 class ShowEpisodeViewController: UIViewController {
+    
+    var oneShow: Show!
+    var 
 
+    @IBOutlet weak var episodeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        episodeTableView.delegate = self
+        episodeTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ShowEpisodeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = episodeTableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? ShowTableViewCell {
+            cell.episodeNameLabel.text = oneShow.show.name
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
+    }
+    
+    
 }

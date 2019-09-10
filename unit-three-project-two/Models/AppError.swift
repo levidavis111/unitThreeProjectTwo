@@ -20,7 +20,4 @@ enum AppError: Error {
     case badImageData
     case other(errorDescription: String)
     
-    //    func provideErrorForAppError() -> Error {
-    //        return Error()
-    //    }
 }

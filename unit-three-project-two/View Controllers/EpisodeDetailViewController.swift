@@ -23,10 +23,8 @@ class EpisodeDetailViewController: UIViewController {
         super.viewDidLoad()
         activitySpinnerOutlet.startAnimating()
         setupViews()
-        // Do any additional setup after loading the view.
     }
     
-
     private func setupViews() {
         getImage()
         episodeDetailNameLabel.text = oneEpsiode.name

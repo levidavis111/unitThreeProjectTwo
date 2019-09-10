@@ -37,7 +37,6 @@ class ShowEpisodeViewController: UIViewController {
         episodeTableView.dataSource = self
         activitySpinnerOutlet.startAnimating()
         loadData()
-        // Do any additional setup after loading the view.
     }
 
     func loadData() {
@@ -52,7 +51,6 @@ class ShowEpisodeViewController: UIViewController {
             }
         }
     }
-    
     
 }
 
@@ -88,6 +86,5 @@ extension ShowEpisodeViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
     
 }

@@ -16,6 +16,11 @@ class Episode: Codable {
     let number: Int?
     let image: Image?
     let summary: String?
+    var cleanSummary: String {
+        get {
+            return summary?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) ?? ""
+        }
+    }
     
     struct Image: Codable {
         let medium: String

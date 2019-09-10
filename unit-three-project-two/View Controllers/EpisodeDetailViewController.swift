@@ -10,6 +10,8 @@ import UIKit
 
 class EpisodeDetailViewController: UIViewController {
     
+    var oneEpsiode: Episode!
+    
     
     @IBOutlet weak var episodeDetailImageView: UIImageView!
     @IBOutlet weak var episodeDetailNameLabel: UILabel!
@@ -18,19 +20,29 @@ class EpisodeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupViews() {
+        getImage()
+        episodeDetailNameLabel.text = oneEpsiode.name
+        episodeDetailSeasonAndNumberLabel.text = "S: \(oneEpsiode.season ?? 0) E: \(oneEpsiode.number ?? 0)"
+        episodeDetailSummaryTextView.text = oneEpsiode.summary
     }
-    */
 
+    private func getImage() {
+        guard let imageUrl = oneEpsiode.image?.original else {return}
+        ImageHelper.shared.fetchImage(urlString: imageUrl) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let image):
+                    self.episodeDetailImageView.image = image
+                }
+            }
+        }
+    }
 }

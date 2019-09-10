@@ -15,6 +15,7 @@ class Episode: Codable {
     let season: Int?
     let number: Int?
     let image: Image?
+    let summary: String?
     
     struct Image: Codable {
         let medium: String

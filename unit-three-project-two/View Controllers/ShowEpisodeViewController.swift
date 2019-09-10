@@ -18,6 +18,16 @@ class ShowEpisodeViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is EpisodeDetailViewController {
+            guard let indexPath = episodeTableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? EpisodeDetailViewController else {return}
+            let oneEpisode = episodes?[indexPath.row]
+            detailVC.oneEpsiode = oneEpisode
+        }
+    }
+    
+    
     @IBOutlet weak var episodeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

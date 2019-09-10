@@ -45,9 +45,18 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-qr-7A2">
-                                                    <rect key="frame" x="200" y="43.5" width="194" height="21"/>
+                                                    <rect key="frame" x="200" y="22" width="194" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Pgj-7t-voh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8D-Rp-d8r">
+                                                    <rect key="frame" x="200" y="65" width="194" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="jbn-lj-ss4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -56,15 +65,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cOw-6l-kW1" firstAttribute="leading" secondItem="kZf-FK-hRR" secondAttribute="leading" constant="20" id="0xv-5A-aeA"/>
+                                                <constraint firstItem="t8D-Rp-d8r" firstAttribute="centerY" secondItem="kZf-FK-hRR" secondAttribute="centerY" multiplier="1.4" id="2w4-BQ-dBH"/>
+                                                <constraint firstItem="t8D-Rp-d8r" firstAttribute="trailing" secondItem="kZf-FK-hRR" secondAttribute="trailingMargin" id="9FN-6T-N1j"/>
                                                 <constraint firstItem="bqu-qr-7A2" firstAttribute="trailing" secondItem="kZf-FK-hRR" secondAttribute="trailingMargin" id="Be6-E0-6zz"/>
-                                                <constraint firstItem="bqu-qr-7A2" firstAttribute="centerY" secondItem="kZf-FK-hRR" secondAttribute="centerY" id="FMM-0v-INb"/>
+                                                <constraint firstItem="bqu-qr-7A2" firstAttribute="centerY" secondItem="kZf-FK-hRR" secondAttribute="centerY" multiplier="0.6" id="FMM-0v-INb"/>
                                                 <constraint firstItem="bqu-qr-7A2" firstAttribute="leading" secondItem="cOw-6l-kW1" secondAttribute="trailing" constant="8" id="Gk7-Qm-XNX"/>
                                                 <constraint firstItem="cOw-6l-kW1" firstAttribute="centerY" secondItem="kZf-FK-hRR" secondAttribute="centerY" id="f6h-0O-7mV"/>
+                                                <constraint firstItem="t8D-Rp-d8r" firstAttribute="leading" secondItem="cOw-6l-kW1" secondAttribute="trailing" constant="8" id="syc-IV-WDK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="showImageView" destination="cOw-6l-kW1" id="3yD-2U-dUS"/>
                                             <outlet property="showNameLabel" destination="bqu-qr-7A2" id="a62-Fc-ghZ"/>
+                                            <outlet property="showRatingLabel" destination="t8D-Rp-d8r" id="Arg-og-NVG"/>
                                             <segue destination="yws-nl-caO" kind="show" id="aA3-FG-1Yv"/>
                                         </connections>
                                     </tableViewCell>

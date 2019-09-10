@@ -80,8 +80,11 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
             }
             
             cell.showNameLabel.text = oneShow.show.name
+            cell.showRatingLabel.text = "Rating: \(oneShow.show.rating?.average ?? 0)"
             return cell
         }
+        
+//        String(format: "%.3f", 0.6844)
         
         return UITableViewCell()
     }

@@ -10,12 +10,11 @@ import Foundation
 
 class Episode: Codable {
     
-    let id: Int
-    let name: String
-    let season: Int
-    let number: Int
-    let airdate: String
-    let image: Image
+    
+    let name: String?
+    let season: Int?
+    let number: Int?
+    let image: Image?
     
     struct Image: Codable {
         let medium: String

@@ -11,6 +11,7 @@ import UIKit
 class ShowEpisodeViewController: UIViewController {
     
     var oneShow: Show!
+    
     var episodes: [Episode]? {
         didSet {
             episodeTableView.reloadData()
@@ -51,7 +52,7 @@ extension ShowEpisodeViewController: UITableViewDelegate, UITableViewDataSource 
         
         if let cell = episodeTableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? ShowTableViewCell {
             let oneEpisode = episodes?[indexPath.row]
-            ImageHelper.shared.fetchImage(urlString: oneEpisode?.image.original ?? "") { (results) in
+            ImageHelper.shared.fetchImage(urlString: oneEpisode?.image?.original ?? "") { (results) in
                 DispatchQueue.main.async {
                     switch results {
                     case .failure(let error):

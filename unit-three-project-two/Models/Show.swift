@@ -24,16 +24,6 @@ struct Show: Codable {
         let original: String
     }
     
-//    static func getSearchResults(showArr: [Show], search: String?) -> [Show] {
-//        
-//        guard let search = search else {return showArr}
-//        guard search != "" else {return showArr}
-//        
-//        return showArr
-//        
-//        }
-        
-    
     
     static func getShowData(searchString: String?, completionHandler: @escaping (Result<[Show],AppError>) -> () ) {
         var url = "http://api.tvmaze.com/search/shows?q=girls"

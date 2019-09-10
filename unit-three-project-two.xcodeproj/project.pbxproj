@@ -19,6 +19,7 @@
 		FC3B320C2326EA4C00FA66F0 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B320B2326EA4C00FA66F0 /* ShowViewController.swift */; };
 		FC3B32112326EB3300FA66F0 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B32102326EB3300FA66F0 /* ShowTableViewCell.swift */; };
 		FC965ED3232821E7006BDF0A /* ShowEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC965ED2232821E7006BDF0A /* ShowEpisodeViewController.swift */; };
+		FC965ED5232827A4006BDF0A /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC965ED4232827A4006BDF0A /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		FC3B320B2326EA4C00FA66F0 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		FC3B32102326EB3300FA66F0 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		FC965ED2232821E7006BDF0A /* ShowEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEpisodeViewController.swift; sourceTree = "<group>"; };
+		FC965ED4232827A4006BDF0A /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				FC3B32052326E7C900FA66F0 /* AppError.swift */,
 				FC3B32092326E80800FA66F0 /* ImageManager.swift */,
 				FC3B32072326E7D400FA66F0 /* Show.swift */,
+				FC965ED4232827A4006BDF0A /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				FC3B320A2326E80800FA66F0 /* ImageManager.swift in Sources */,
 				FC3B32082326E7D400FA66F0 /* Show.swift in Sources */,
 				FC3B31E42326E73F00FA66F0 /* AppDelegate.swift in Sources */,
+				FC965ED5232827A4006BDF0A /* Episode.swift in Sources */,
 				FC3B320C2326EA4C00FA66F0 /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

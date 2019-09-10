@@ -29,7 +29,7 @@ class EpisodeDetailViewController: UIViewController {
         getImage()
         episodeDetailNameLabel.text = oneEpsiode.name
         episodeDetailSeasonAndNumberLabel.text = "S: \(oneEpsiode.season ?? 0) E: \(oneEpsiode.number ?? 0)"
-        episodeDetailSummaryTextView.text = oneEpsiode.summary
+        episodeDetailSummaryTextView.text = oneEpsiode.summary?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 
     private func getImage() {

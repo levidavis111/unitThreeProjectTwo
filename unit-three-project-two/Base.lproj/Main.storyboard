@@ -83,6 +83,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-oy-Rsl">
+                                <rect key="frame" x="197" y="487" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="OxG-MF-DSr"/>
+                                    <constraint firstAttribute="width" constant="20" id="u1e-zb-1JT"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -91,12 +98,15 @@
                             <constraint firstItem="n4h-UP-qQ8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hcv-SG-7WR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ujb-wF-Gx9" secondAttribute="trailing" id="jfc-dh-9lM"/>
                             <constraint firstItem="n4h-UP-qQ8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kQM-1S-rKB"/>
+                            <constraint firstItem="DzV-oy-Rsl" firstAttribute="centerX" secondItem="Ujb-wF-Gx9" secondAttribute="centerX" id="pYg-xV-dRJ"/>
                             <constraint firstItem="Ujb-wF-Gx9" firstAttribute="top" secondItem="n4h-UP-qQ8" secondAttribute="bottom" id="rYq-ux-74u"/>
+                            <constraint firstItem="DzV-oy-Rsl" firstAttribute="centerY" secondItem="Ujb-wF-Gx9" secondAttribute="centerY" id="xTK-b7-Z07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="onY-oZ-1c3"/>
                     <connections>
+                        <outlet property="activitySpinnerOutlet" destination="DzV-oy-Rsl" id="jIP-MC-MH9"/>
                         <outlet property="showSearchBar" destination="n4h-UP-qQ8" id="pch-AE-xCc"/>
                         <outlet property="showTableView" destination="Ujb-wF-Gx9" id="NSe-jr-2iQ"/>
                     </connections>

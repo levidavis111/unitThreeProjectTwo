@@ -12,6 +12,7 @@ class ShowViewController: UIViewController {
 
     @IBOutlet weak var showSearchBar: UISearchBar!
     @IBOutlet weak var showTableView: UITableView!
+    @IBOutlet weak var activitySpinnerOutlet: UIActivityIndicatorView!
     
     var shows = [Show]() {
         didSet {
@@ -52,6 +53,7 @@ class ShowViewController: UIViewController {
         showTableView.delegate = self
         showTableView.dataSource = self
         showSearchBar.delegate = self
+        activitySpinnerOutlet.isHidden = true
         
     }
     
@@ -67,12 +69,14 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
             let oneShow = searchResults[indexPath.row]
             
             if let urlString = oneShow.show.image?.original {
+
                 ImageHelper.shared.fetchImage(urlString: urlString) { (result) in
                     DispatchQueue.main.async {
                         switch result {
                         case .failure(let error):
                             print(error)
                         case .success(let image):
+                            self.activitySpinnerOutlet.stopAnimating()
                             cell.showImageView.image = image
                         }
                     }
@@ -84,8 +88,6 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
             return cell
         }
         
-//        String(format: "%.3f", 0.6844)
-        
         return UITableViewCell()
     }
     
@@ -94,7 +96,9 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         searchString = searchText.lowercased()
+        activitySpinnerOutlet.startAnimating()
         
             Show.getShowData(searchString: searchString) { (result) in
                 DispatchQueue.main.async {

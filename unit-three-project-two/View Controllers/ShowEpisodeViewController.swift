@@ -29,10 +29,13 @@ class ShowEpisodeViewController: UIViewController {
     
     
     @IBOutlet weak var episodeTableView: UITableView!
+    @IBOutlet weak var activitySpinnerOutlet: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         episodeTableView.delegate = self
         episodeTableView.dataSource = self
+        activitySpinnerOutlet.startAnimating()
         loadData()
         // Do any additional setup after loading the view.
     }
@@ -68,6 +71,7 @@ extension ShowEpisodeViewController: UITableViewDelegate, UITableViewDataSource 
                     case .failure(let error):
                         print(error)
                     case .success(let image):
+                        self.activitySpinnerOutlet.stopAnimating()
                         cell.episodeImageView.image = image
                     }
                 }

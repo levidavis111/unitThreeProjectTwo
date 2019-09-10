@@ -180,17 +180,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zDY-uF-bSb">
+                                <rect key="frame" x="0.0" y="465" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="aTx-f0-wHj"/>
+                                    <constraint firstAttribute="height" constant="20" id="p2S-lY-ATw"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nKo-pR-U77" firstAttribute="top" secondItem="Gu6-89-tYo" secondAttribute="top" id="787-9Q-WnA"/>
+                            <constraint firstItem="zDY-uF-bSb" firstAttribute="centerX" secondItem="nKo-pR-U77" secondAttribute="centerX" id="KUw-3I-KaV"/>
                             <constraint firstItem="Gu6-89-tYo" firstAttribute="bottom" secondItem="nKo-pR-U77" secondAttribute="bottom" id="PM9-xE-e5U"/>
                             <constraint firstItem="Gu6-89-tYo" firstAttribute="trailing" secondItem="nKo-pR-U77" secondAttribute="trailing" id="Yxv-oG-pMs"/>
                             <constraint firstItem="nKo-pR-U77" firstAttribute="leading" secondItem="Gu6-89-tYo" secondAttribute="leading" id="sUR-eZ-niU"/>
+                            <constraint firstItem="zDY-uF-bSb" firstAttribute="centerY" secondItem="nKo-pR-U77" secondAttribute="centerY" id="wfa-0h-Cts"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gu6-89-tYo"/>
                     </view>
                     <connections>
+                        <outlet property="activitySpinnerOutlet" destination="zDY-uF-bSb" id="kRy-zv-hib"/>
                         <outlet property="episodeTableView" destination="nKo-pR-U77" id="7Vl-Ez-YAH"/>
                     </connections>
                 </viewController>

@@ -13,4 +13,11 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var showNameLabel: UILabel!
     
+    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var episodeNameLabel: UILabel!
+    @IBOutlet weak var epsiodeSeasonAndNumberLabel: UILabel!
+    
+    
+    
+    
 }

@@ -53,8 +53,20 @@ class ShowViewController: UIViewController {
         showTableView.delegate = self
         showTableView.dataSource = self
         showSearchBar.delegate = self
-        activitySpinnerOutlet.isHidden = true
         
+    }
+    
+    private func loadData(input: String?) {
+        Show.getShowData(searchString: input) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let shows):
+                    self.shows = shows
+                }
+            }
+        }
     }
     
 }
@@ -99,17 +111,8 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
         
         searchString = searchText.lowercased()
         activitySpinnerOutlet.startAnimating()
+        loadData(input: searchText)
         
-            Show.getShowData(searchString: searchString) { (result) in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case .success(let shows):
-                        self.shows = shows
-                    }
-                }
-            }
-        }
+    }
     
 }

@@ -40,7 +40,6 @@ class Episode: Codable {
                     
                     completionHandler(.success(episodeResults))
                 } catch {
-                    print(error)
                     completionHandler(.failure(.badJSONError))
                 }
             }

@@ -79,9 +79,7 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = showTableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? ShowTableViewCell {
             let oneShow = searchResults[indexPath.row]
-            
             if let urlString = oneShow.show.image?.original {
-
                 ImageHelper.shared.fetchImage(urlString: urlString) { (result) in
                     DispatchQueue.main.async {
                         switch result {
@@ -107,12 +105,9 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource, UISear
         return 150
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        searchString = searchText.lowercased()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchString = searchBar.text?.lowercased()
         activitySpinnerOutlet.startAnimating()
-        loadData(input: searchText)
-        
+        loadData(input: searchString)
     }
-    
 }

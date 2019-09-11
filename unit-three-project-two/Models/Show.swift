@@ -47,7 +47,6 @@ struct Show: Codable {
                     
                     completionHandler(.success(showResults))
                 } catch {
-                    print(error)
                     completionHandler(.failure(.badJSONError))
                 }
             }
